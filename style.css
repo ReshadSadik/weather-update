@@ -1,0 +1,58 @@
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.area {
+  height: 100vh;
+  background-image: url(./images/mountains-6544522_1920.jpg);
+}
+button {
+  color: white;
+  background-color: transparent;
+  border: 1px solid white;
+  padding: 5px 20px;
+  transition: 0.3s;
+}
+button:hover {
+  background-color: white;
+  color: black;
+}
+.temps {
+  padding: 20px;
+  font-size: 30px;
+  color: white;
+}
+
+#area-space {
+  padding: 40px;
+  background-color: #00446e6c;
+  border-radius: 25px;
+}
+
+h2 {
+  color: white;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.input {
+  background-color: #00446e85;
+  color: white;
+  border: none;
+  font-size: 12px;
+  padding: 0 20px;
+}
+
+.input:focus {
+  outline: none;
+  background-color: #00446e85;
+  color: white;
+}
+
+.input::placeholder {
+  color: white;
+}
+
+.cloud {
+  color: rgb(37, 172, 172);
+}
