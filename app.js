@@ -3,7 +3,7 @@ const getUpdate= () =>{
     const inputText=document.getElementById('inputValue');
     const inputValue=inputText.value;
 // fethcing data from API
-    fetch(`http://api.openweathermap.org/data/2.5/weather?q=${inputValue}&appid=bebaffb8a8aedcfc3dc27239cdfdb791`)
+    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${inputValue}&appid=bebaffb8a8aedcfc3dc27239cdfdb791`)
     .then(res=> res.json())
     .then(data=> displayData(data))
     // .then(data=> console.log(data))
