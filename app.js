@@ -1,15 +1,60 @@
 // getting weather update funciton
-const getUpdate= () =>{
-    const inputText=document.getElementById('inputValue');
+const getUpdate= async () =>{
+    const inputText=document.getElementById('input-value');
     const inputValue=inputText.value;
+        // const displaySpace=document.getElementById('area-space').innerText="";
+    
+    const url= `https://api.openweathermap.org/data/2.5/weather?q=${inputValue}&appid=bebaffb8a8aedcfc3dc27239cdfdb791`;
+
+    document.querySelector('.spinner').classList.add('spinner-hide');
+    
 // fethcing data from API
-    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${inputValue}&appid=bebaffb8a8aedcfc3dc27239cdfdb791`)
-    .then(res=> res.json())
-    .then(data=> displayData(data))
-    // .then(data=> console.log(data))
+    const response= await fetch(url);
+    const data= await response.json();
+    if(response){
+        document.querySelector('.spinner').classList.remove('spinner-hide');
+    }
+
+            if(data.cod==404){
+                document.getElementById('area-space').innerText="Please Provide A City Name";
+                document.getElementById('area-space').classList.add('error');
+                const img=document.getElementById("image").src="";
+        }
+        else{
+        displayData(data);
+        }
+        inputText.value="";
 
 }
 
+
+// new
+
+
+
+// const getUpdate=  () =>{
+//     const url= `https://api.openweathermap.org/data/2.5/weather?q=${inputValue}&appid=bebaffb8a8aedcfc3dc27239cdfdb791`;
+// fethcing data from API
+    // fetch(url)
+
+    // .then(res=>res.json())
+    // .then(data=> {
+    //     if(data.cod==404){
+    //             document.getElementById('area-space').innerText="Please Provide A City Name";
+    //             document.getElementById('area-space').classList.add('error');
+    //             const img=document.getElementById("image").src="";
+    //     }
+    //     else{
+    //     displayData(data);
+    //     }
+    // })
+
+
+
+// const response = await etch(`https://api.openweathermap.org/data/2.5/weather?q=${inputValue}&appid=bebaffb8a8aedcfc3dc27239cdfdb791`);
+
+
+// }
 
 // converting Kelvin to celcius
 
@@ -21,8 +66,8 @@ return Newcelcius;
 }
 // displaying the data
 const displayData= (forecast)=>{
-
     const displaySpace=document.getElementById('area-space');
+
     displaySpace.innerHTML=`
     
                 <h2 class="text-center">${forecast.name}</h2>
@@ -55,7 +100,3 @@ const displayData= (forecast)=>{
     }
 }
 
-
-
-
-//  <img src="./images/clouds.png" width="50px" alt=""></img>

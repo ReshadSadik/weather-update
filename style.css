@@ -5,6 +5,8 @@ body {
 .area {
   height: 100vh;
   background-image: url(./images/mountains-6544522_1920.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 button {
   color: white;
@@ -21,6 +23,8 @@ button:hover {
   padding: 20px;
   font-size: 30px;
   color: white;
+}
+#image {
 }
 
 #area-space {
@@ -55,4 +59,18 @@ h2 {
 
 .cloud {
   color: rgb(37, 172, 172);
+}
+.error {
+  color: white;
+  font-size: 20px;
+  text-transform: uppercase;
+}
+.spinner {
+  display: none;
+  text-align: center;
+  color: white;
+}
+
+.spinner-hide {
+  display: block;
 }
